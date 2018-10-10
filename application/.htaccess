@@ -3,4 +3,8 @@ RewriteEngine on
 RewriteCond $1 !^(index\.php|images|css|js|robots\.txt|favicon\.ico)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{HTTP_HOST} ^(www\.)?backdoor2heaven\.com
+RewriteRule ^(.*)$ https://www.backdoor2heaven.com/$1 [R,L]
+
 RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
